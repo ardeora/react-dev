@@ -6,7 +6,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['prettier'],
-  ignorePatterns: [],
+  ignorePatterns: ['postcss.config.js'],
   rules: {
     'prettier/prettier': [
       'error',
