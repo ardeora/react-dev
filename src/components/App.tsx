@@ -1,9 +1,12 @@
 import React from 'react';
+import { Stack, Progress } from '@chakra-ui/react';
 
 export const App: React.FC = () => {
   return (
     <div>
-      <h1>Hello World YO</h1>
+      <Stack>
+        <Progress isIndeterminate />
+      </Stack>
     </div>
   );
 };
