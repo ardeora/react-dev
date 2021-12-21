@@ -1,12 +1,17 @@
+import { Button, useColorMode } from '@chakra-ui/react';
 import React from 'react';
-import { Stack, Progress } from '@chakra-ui/react';
+import { Counter } from './Counter';
 
 export const App: React.FC = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <div>
-      <Stack>
-        <Progress isIndeterminate />
-      </Stack>
-    </div>
+    <>
+      <p>Hello</p>
+      <Button variant={'outline'} onClick={toggleColorMode}>
+        Toggle {colorMode}
+      </Button>
+      <Counter />
+    </>
   );
 };
