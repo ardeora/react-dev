@@ -1,9 +1,11 @@
 import React from 'react';
+// import Navbar from './Navbar';
+import WithSubnavigation from './Navbar/Navbar2';
 
 export const App: React.FC = () => {
   return (
     <div>
-      <h1>Hello World YO</h1>
+      <WithSubnavigation />
     </div>
   );
 };
