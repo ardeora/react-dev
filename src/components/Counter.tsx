@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useTheme } from './Theme';
 import { css } from '@emotion/css';
+import { themeAtom } from './App';
+import { useAtom } from '../particule';
 
 export const Counter = (): JSX.Element => {
   const [count, setCount] = useState(0);
-  const { theme, toggleTheme } = useTheme();
+  const [theme, setTheme] = useAtom(themeAtom);
 
   return (
     <div
@@ -16,7 +17,13 @@ export const Counter = (): JSX.Element => {
       <h1>Count: {count}</h1>
       <button onClick={() => setCount(count + 1)}>+</button>
       <button onClick={() => setCount(count - 1)}>-</button>
-      <input onChange={toggleTheme} type="checkbox" checked={theme === 'light' ? false : true} />
+      <input
+        onChange={() => {
+          theme === 'dark' ? setTheme('light') : setTheme('dark');
+        }}
+        type="checkbox"
+        checked={theme === 'dark' ? true : false}
+      />
     </div>
   );
 };

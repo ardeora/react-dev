@@ -1,13 +1,20 @@
 import React from 'react';
 import { css } from '@emotion/css';
-import { useTheme } from './Theme';
+import { themeAtom } from './App';
+import { useAtom } from '../particule';
 
 export const Switch = (): JSX.Element => {
-  const { theme, toggleTheme } = useTheme();
+  const [theme, setTheme] = useAtom(themeAtom);
 
   return (
     <div className={style}>
-      <input onChange={toggleTheme} type="checkbox" checked={theme === 'light' ? false : true} />
+      <input
+        onChange={() => {
+          theme === 'dark' ? setTheme('light') : setTheme('dark');
+        }}
+        type="checkbox"
+        checked={theme === 'dark' ? true : false}
+      />
     </div>
   );
 };
