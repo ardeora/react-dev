@@ -18,7 +18,7 @@ export const Interval = (): JSX.Element => {
   // console.log(`Mouse: ${x}, ${y}`);
 
   useEffect(() => {
-    const intervalTicker = setInterval(tick, 1550);
+    const intervalTicker = setInterval(tick, 300);
     return () => {
       clearInterval(intervalTicker);
     };

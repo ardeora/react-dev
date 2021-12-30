@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { css } from '@emotion/css';
 import { themeAtom } from './App';
 import { useAtom } from '../particule';
@@ -8,9 +8,18 @@ const initCounter = (): number => {
   return 0;
 };
 
-export const Counter = (): JSX.Element => {
+export const Callback = (): JSX.Element => {
   const [count, setCount] = useState(initCounter);
   const [theme, setTheme] = useAtom(themeAtom);
+
+  const abc = useCallback(() => {
+    console.log(`${theme}`);
+  }, [theme]);
+
+  console.log(window.abc === abc);
+  window.abc = abc;
+  abc()
+  
 
   return (
     <div

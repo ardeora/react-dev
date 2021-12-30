@@ -9,7 +9,7 @@ module.exports = {
   ignorePatterns: [],
   rules: {
     'prettier/prettier': [
-      'error',
+      'warn',
       {
         singleQuote: true,
         trailingComma: 'es5',
